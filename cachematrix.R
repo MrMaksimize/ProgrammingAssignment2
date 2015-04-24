@@ -1,10 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+# This seems like OOP in R.  The first part creates an object that's a list
+# That knows how set its own value, get its own value, and also get and set its own
+# solved values.
 
-## Write a short comment describing this function
-# This is almost like class initiator function that creates the matrix.
-# Seems almost like a class extension would work in other languages.
-# Set seems to be a constructor.
+
+
+# Creates an object that stores the value of the matrix and also knows how to 
+# Get, set its own value and also get and set its own inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -23,9 +24,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
+# CacheSolve takes an instance, or multiple instances of the objects created by the function 
+# above, if solve has not been run on this object and it has not been stored, it stores
+# the result of the solve operation.  Otherwise it retrieves it from cache and returns it.
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
-  
   m <- x$getInverse()
   if(!is.null(m)) {
     message("getting cached data")
@@ -35,5 +37,4 @@ cacheSolve <- function(x, ...) {
   m <- solve(data, ...)
   x$setInverse(m)
   m
-  
 }
