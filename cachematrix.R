@@ -1,11 +1,11 @@
-# This seems like OOP in R.  The first part creates an object that's a list
-# That knows how set its own value, get its own value, and also get and set its own
+# This whole thing seems like OOP in R.  The first part creates an object that's a list.  
+# It knows how to perform certain operations on itself.
+# It knows how set its own value, get its own value, and also get and set its own
 # solved values.
 
 
-
-# Creates an object that stores the value of the matrix and also knows how to 
-# Get, set its own value and also get and set its own inverse.
+# Creates an object (list) that stores the value of the matrix and also knows how to 
+# Get, set its own value and also get and set its own inverse.  Basically a list of methods.
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -24,7 +24,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
-# CacheSolve takes an instance, or multiple instances of the objects created by the function 
+# CacheSolve takes an instance, of the object created by the function 
 # above, if solve has not been run on this object and it has not been stored, it stores
 # the result of the solve operation.  Otherwise it retrieves it from cache and returns it.
 cacheSolve <- function(x, ...) {
